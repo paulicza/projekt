@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Wedding Booking!</h1>
+        <p class="lead">Find and book the perfect wedding venue in Krakow.</p>
+        <hr class="my-4">
+    </div>
+    <div class="row">
+        {% for restaurant in restaurants %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ restaurant.name }}</h5>
+                        <p class="card-text">{{ restaurant.location }}</p>
+                        <p class="card-text">{{ restaurant.menu }}</p>
+                        <a href="{{ url_for('book', restaurant_id=restaurant.id) }}" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

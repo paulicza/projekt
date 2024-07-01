@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <h2>Book {{ restaurant.name }}</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.date.label(class="form-control-label") }}
+                {{ form.date(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.guests.label(class="form-control-label") }}
+                {{ form.guests(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.menu_choice.label(class="form-control-label") }}
+                {{ form.menu_choice(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary btn-block") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}
